@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="ko-KR">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../resources/in_app_event/css/common.css" media="screen" rel="stylesheet">
+    <script src="../resources/js/jquery-1.12.4.min.js"></script>
+    <script src="../resources/in_app_event/js/design.js"></script>
+    <script src="../resources/wallet/js/lottie-player.js"></script>
+    <title>더쎈카드</title>
+</head>
+
+<body>
+
+    <div id="wrap" class="event-wrap">
+      <!-- container -->
+      <div id="container" class="view">
+        <div class="event-info-wrap">
+            <p class="tit">[더쎈DAY] 메가박스 영화관람권 100P 즉석응모</p>
+            <div class="info">
+                <span class="day">22.02.15~23.01.13</span><span class="state">진행중</span>
+            </div>
+        </div>
+        <style>
+          @keyframes slidex {
+            from {transform: translateX(0);}
+            to {transform: translateX(-50%);}
+          }
+          .megabox-rolling-inner {
+            display: flex;
+            white-space: nowrap;
+            height: 100%;
+            animation: slidex infinite linear;
+          }
+          .megabox-rolling-box {
+            display: flex;
+            white-space: nowrap;
+            align-items: center;
+            font-size: 16px;
+            color: #fff;
+            height: 100%;
+          }
+          .megabox-rolling-box p {padding: 0 20px;}
+          .megabox-rolling-box strong {color: #07ff82;}
+          .roulette-txt {
+            font-size: 15px;
+            font-weight: 500;
+          }
+          .roulette-count {
+            position: relative;
+            display: flex;
+            margin: 20px 0 34px;
+            font-size: 13px;
+            font-weight: 500;
+          }
+          .roulette-count:after {
+            content: "";
+            position: absolute;
+            top: 50%; left: 50%;
+            border-right: 1.5px solid #ccc;
+            height: 12px;
+            margin-top: -6px;
+          }
+          .roulette-count div {
+            flex: 1;
+            text-align: center;
+          }
+          .roulette-count .key {opacity: .65;}
+          .roulette-lottie {
+            position: absolute;
+            top:-150px; right:-50px; left:-50px; bottom: 0;
+          }
+          .roulette-coupon {margin-bottom: 22px;}
+          .roulette-coupon img {max-width: 300px;}
+          @media screen and (max-width: 600px) {
+            .ly-pop.ly-btm .wrap .content {
+              padding: 20px;
+            }
+            .ly-info>.wrap>.content .tit-wrap {
+              margin-bottom: 10px;
+            }
+            .roulette-coupon {margin-bottom: 10px;}
+            .roulette-coupon img {
+              height: 150px;
+            }
+            .roulette-count {margin: 10px 0 34px;}
+          }
+        </style>
+        <div class="event-img-wrap">
+          <img src="../resources/in_app_event/images/img_megabox04_1.jpg" alt="메가박스 이벤트">
+          <div class="megabox-rolling"
+          style="
+            position: absolute;
+            top: 83.5%; right: 7.5%; bottom: 8.5%; left: 7.5%;
+            overflow: hidden;
+            display: flex;
+            white-space: nowrap;
+          ">
+            <div class="megabox-rolling-inner">
+              <div class="megabox-rolling-box">
+                <p><strong>한**</strong>님이 경품획득 영화관람권 당첨</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          function rolling() {
+            let wrap = document.querySelector('.megabox-rolling');
+            let inner = document.querySelector('.megabox-rolling-inner');
+            let box = document.querySelector('.megabox-rolling-box');
+            wrap.querySelectorAll('.isClone').forEach(_this=>{
+              _this.remove();
+            })
+            let items = box.querySelectorAll('p');
+            for(let idx = 0; idx < items.length; idx++) {
+              let clone = items[idx].cloneNode(true);
+              clone.classList.add('isClone');
+              box.insertAdjacentElement('beforeend', clone);
+            }
+            let boxClone = box.cloneNode(true);
+            boxClone.classList.add('isClone');
+            inner.insertAdjacentElement('beforeend', boxClone);
+            inner.style.animationDuration = (box.clientWidth / wrap.clientWidth) * 10 + 's';
+            window.addEventListener('resize', ()=>{
+              inner.style.animationDuration = (box.clientWidth / wrap.clientWidth) * 10 + 's';
+            });
+          }
+          rolling();
+        </script>
+        <div class="event-img-wrap">
+          <img src="../resources/in_app_event/images/img_megabox04_2.jpg" alt="메가박스 이벤트">
+          <a href="#" style="
+            position: absolute;
+            top: 46.5%; right: 12%; bottom: 45.5%; left: 12%;
+            font-size: 0;
+          ">혜택찾기 바로가기</a>
+        </div>
+        <div class="event-noti-wrap">
+          <p class="noti-tit">유의사항</p>
+          <ul class="noti-list">
+            <li>응모한 포인트는 환불이 불가능합니다.</li>
+            <li>본 이벤트는 기간 내 중복응모 가능합니다.</li>
+            <li>응모는 이벤트 기간 종료일 전까지 가능합니다.</li>
+            <li>당사 및 제휴사의 사정에 따라 별도 고지 없이 변경 및 종료될 수 있습니다.</li>
+            <li>이벤트 관련 문의는 고객센터 <a href="mailto:cs@tnessencard.co.kr">cs@tnessencard.co.kr</a>로 연락 바랍니다.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- //container -->
+      <div data-ui-fixed="bottom">
+        <button type="button" onclick="shareFunc();" class="btn-share isTopNone">공유하기</button>
+        <div class="btn-wrap full">
+          <button type="button" class="btn-action" onclick="UI.popupOpen.init('result04');">
+            응모하기
+            <figure class="tooltip type3">100P로 바로 응모하고! <span class="colorMain">중복 당첨</span>까지!</figure>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- [팝업] 상세 응모 팝업 -->
+  <div id="pop-result" class="ly-pop ly-btm ly-info ndim">
+      <div class="wrap">
+          <div class="content">
+              <div class="desc-txt type02">
+                  <p class="tit">마케팅 정보 수신 동의</p>
+                  <p class="txt">고객님이 응모하신 이벤트에 대한 알림과<br>다른 유용한 이벤트 정보를 알려드릴게요.</p>
+              </div>
+              <ul class="term-chk-list">
+                  <li>
+                      <span class="chk">
+                          <input type="checkbox" name="terms" id="terms01">
+                          <label for="terms01">마케팅 목적 개인정보 수집·이용 동의(선택)</label>
+                      </span>
+                      <button type="button" class="btn-link" onclick="UI.popupOpen.init('terms');"><span class="blind">약관 상세보기</span></button>
+                  </li>
+                  <li>
+                      <span class="chk">
+                          <input type="checkbox" name="terms" id="terms02">
+                          <label for="terms02">마케팅 정보 수신 동의(선택)</label>
+                      </span>
+                      <button type="button" class="btn-link" onclick="UI.popupOpen.init('terms');"><span class="blind">약관 상세보기</span></button>
+                  </li>
+              </ul>
+              <ul class="dot-list">
+                  <li>동의 철회는 [설정 > 알림 설정] 에서 변경 가능해요</li>
+                  <li>마케팅 정보 수신 동의한 고객에 한해 응모신청 및 경품지급이 가능해요</li>
+              </ul>
+          </div>
+          <div data-ui-fixed="bottom">
+              <div class="btn-wrap">
+                  <button type="button" class="btn-basic" onclick="UI.popupClose.init('result');">괜찮아요</button>
+                  <button type="button" class="btn-action btn-enter" onclick="
+                    UI.popupClose.init('result');
+                    UI.popupOpen.init('result01');
+                  ">네,알려주세요</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- //[팝업] 상세 응모 팝업 -->
+
+  <!-- 룰렛 -->
+  <div id="pop-result01" class="ly-pop ly-btm ly-info ndim">
+    <div class="wrap">
+      <div class="content" style="overflow: hidden;">
+        <div class="before-wrap">
+          <div class="roulette">
+            <i class="pin"></i>
+            <i class="btn"></i>
+            <div class="box">
+              <img src="../resources/in_app_event/images/img_roulette_megabox_plate2.png" alt="추첨 룰렛판">
+            </div>
+          </div>
+          <p class="roulette-txt">100P 를 차감하여 메가박스 영화관람권 1매에<br><span class="colorMain">즉시 응모</span>하시겠어요?</p>
+          <div class="roulette-count">
+            <div>
+              <span class="key">내 응모횟수 :</span>
+              <span class="val">10회</span>
+            </div>
+            <div>
+              <span class="key">남은포인트 :</span>
+              <span class="val">750 P</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-ui-fixed="bottom">
+        <div class="btn-wrap">
+          <button type="button" class="btn-withdrawal" onclick="UI.popupClose.init('result01');">다음에 할래요</button>
+          <button type="button" class="btn-action" onclick="sample()">응모하기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // 확인용 샘플
+    var count = 0;
+    function sample() {
+      switch(count) {
+        case 0 : {
+          eventCom();
+          break;
+        }
+        default : {
+          eventCom('fail');
+          break;
+        }
+      }
+      count++;
+    }
+    // 확인용 샘플
+
+    var rouletteState = false;
+    function eventCom(type) {
+      var roulette = document.querySelector('.roulette');
+      roulette.classList.remove('isFail');
+      roulette.classList.add('on');
+      if(rouletteState == false) {
+        rouletteState = true;
+        if(type === 'fail') {roulette.classList.add('isFail');}
+        setTimeout(function() {
+          roulette.classList.remove('on');
+          UI.popupClose.init('result01');
+          rouletteState = false;
+          (type === 'fail') ? UI.popupOpen.init('result03') : UI.popupOpen.init('result02');
+        }, 2200);
+      }
+    }
+  </script>
+  <!-- //룰렛 -->
+
+  <!-- 당첨 o -->
+  <div id="pop-result02" class="ly-pop ly-btm ly-info ndim">
+    <div class="wrap">
+      <div class="content" style="overflow: hidden">
+        <div class="after-wrap">
+          <div class="tit-wrap" style="margin-top: 0;">
+            <p class="tit">당첨을 축하 드립니다!</p>
+            <span class="txt">메가박스 영화관람권 1매</span>
+          </div>
+          <div class="roulette-lottie">
+            <lottie-player class="lottie-wrap" src="../resources/wallet/images/celebration.json" background="transparent" speed="1" loop autoplay></lottie-player>
+          </div>
+          <div class="roulette-coupon">
+            <img src="../resources/in_app_event/images/img_megabox04_com.png" alt="">
+          </div>
+          <p class="roulette-txt">100P 를 차감하여 메가박스 영화관람권 1매에<br><span class="colorMain">즉시 응모</span>하시겠어요?</p>
+          <div class="roulette-count">
+            <div>
+              <span class="key">내 응모횟수 :</span>
+              <span class="val">10회</span>
+            </div>
+            <div>
+              <span class="key">남은포인트 :</span>
+              <span class="val">750 P</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-ui-fixed="bottom">
+        <div class="btn-wrap">
+          <button type="button" class="btn-withdrawal" onclick="UI.popupClose.init('result02');">다음에 할래요</button>
+          <button type="button" class="btn-action" onclick="
+            UI.popupClose.init('result02');
+            UI.popupOpen.init('result01');
+          ">
+          재응모하기
+          <figure class="tooltip type3">중복 당첨 기회!</figure>
+        </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //당첨 o -->
+
+  <!-- 당첨 x -->
+  <div id="pop-result03" class="ly-pop ly-btm ly-info ndim">
+    <div class="wrap">
+      <div class="content">
+        <div class="after-wrap">
+          <div class="tit-wrap" style="margin-top: 0;">
+            <p class="tit">아쉽지만 다음 기회에!</p>
+            <span class="txt" style="color:#111;">
+              바로 재응모가 가능해요!<br>
+              <span class="colorMain">100P로 재도전</span>해보세요!
+            </span>
+          </div>
+          <div class="roulette-coupon">
+            <img src="../resources/in_app_event/images/img_megabox04_fail.png" alt="">
+          </div>
+          <p class="roulette-txt">100P 를 차감하여 메가박스 영화관람권 1매에<br><span class="colorMain">즉시 응모</span>하시겠어요?</p>
+          <div class="roulette-count">
+            <div>
+              <span class="key">내 응모횟수 :</span>
+              <span class="val">10회</span>
+            </div>
+            <div>
+              <span class="key">남은포인트 :</span>
+              <span class="val">750 P</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-ui-fixed="bottom">
+        <div class="btn-wrap">
+          <button type="button" class="btn-withdrawal" onclick="UI.popupClose.init('result03');">다음에 할래요</button>
+          <button type="button" class="btn-action" onclick="
+            UI.popupClose.init('result03');
+            UI.popupClose.init('result01');
+          ">
+            재응모하기
+            <figure class="tooltip type3">중복 당첨 기회!</figure>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //당첨 x -->
+      
+  <!-- 이벤트 끝 -->
+  <div id="pop-result04" class="ly-pop ly-btm ly-info ndim">
+    <div class="wrap">
+      <div class="content">
+        <div class="after-wrap">
+          <div class="tit-wrap">
+            <p class="tit">이벤트가 종료되었어요</p>
+            <span class="txt" style="margin-top:20px; color: #000;">준비한 경품이 모두 소진되었어요.<br>빠르게 이벤트 재준비 후 알려드릴게요!</span>
+          </div>
+        </div>
+        <div data-ui-fixed="bottom">
+          <div class="btn-wrap">
+            <button type="button" class="btn-action" onclick="
+              UI.popupOpen.init('result');
+              UI.popupClose.init('result04');
+            ">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //이벤트 끝 -->
+
+</body>
+
+</html>

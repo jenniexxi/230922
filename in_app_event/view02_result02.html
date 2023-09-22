@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="ko-KR">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../resources/in_app_event/css/common.css" media="screen" rel="stylesheet">
+    <title>더쎈카드</title>
+</head>
+
+<body>
+
+    <div id="wrap" class="event-wrap">
+        <!-- header -->
+        <!-- <header id="header" data-ui-fixed="top">
+        <h1 class="page-tit">이벤트</h1>
+        <button type="button" class="btn-back"><i>이전 화면으로 이동</i></button>
+    </header> -->
+        <!-- //header -->
+        <!-- container -->
+        <div id="container" class="view">
+            <section class="content">
+                <div class="event-info-wrap">
+                    <!--
+                    [D] 클래스 정의
+                    type01 : 제휴 이벤트
+                    type02 : 참여 이벤트
+                -->
+                    <span class="flag type02">참여 이벤트</span>
+                    <p class="tit">발급만 해도 네이버페이 100%증정</p>
+                    <div class="info">
+                        <span class="day">22.08.01 ~ 08.15</span><span class="state">당첨자 발표</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="../resources/in_app_event/images/img_view.png" alt="">
+                </div>
+            </section>
+        </div>
+        <!-- //container -->
+        <div data-ui-fixed="bottom">
+            <div class="btn-wrap full">
+                <button type="button" class="btn-action" onclick="UI.popupOpen.init('result02');">당첨확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- popup -->
+    <div id="pop-result02" class="ly-pop ly-btm ly-info ndim">
+        <div class="wrap">
+            <div class="content">
+                <div class="tit-wrap">
+                    <p class="tit">당첨자 발표 안내</p>
+                    <span class="txt">[메가박스 영화관람권]</span>
+                </div>
+                <div class="noti-wrap type02">
+                    <ul class="num">
+                        <li>010 - 12** - 12**</li>
+                        <li>010 - 12** - 12**</li>
+                        <li>010 - 12** - 12**</li>
+                        <li>010 - 12** - 12**</li>
+                        <li>010 - 12** - 12**</li>
+                        <li>010 - 12** - 12**</li>
+                        <li>010 - 12** - 12**</li>
+                    </ul>
+                </div>
+                <p class="cs-txt">앞으로도 더쎈카드에서 진행될 다양한 이벤트에도 많은 참여와 관심 부탁드립니다. 감사합니다.<br><br>고객센터 <span
+                        class="cs">cs@thessencard.co.kr</span> 로 연락 바랍니다.</p>
+            </div>
+            <div data-ui-fixed="bottom">
+                <div class="btn-wrap full more">
+                    <button type="button" class="btn-action" onclick="UI.popupClose.init('result02');">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //popup -->
+
+    <script src="../resources/js/jquery-1.12.4.min.js"></script>
+    <script src="../resources/in_app_event/js/design.js"></script>
+    <script>
+        $(function () {
+            UI.popupOpen.init('result02');
+        });
+    </script>
+</body>
+
+</html>

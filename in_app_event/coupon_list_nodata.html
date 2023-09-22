@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="ko-KR">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../resources/in_app_event/css/common.css" media="screen" rel="stylesheet">
+    <title>더쎈카드</title>
+</head>
+
+<body>
+
+    <div id="wrap" style="background: #F0F1F3;">
+        <div data-ui-fixed="top">
+            <header id="header">
+                <h1 class="page-tit">쿠폰함</h1>
+                <button type="button" class="btn-close"><i>이전 화면으로 이동</i></button>
+            </header>
+            <ul class="tab-wrap">
+                <li class="active"><a href="javascript:;" class="link">전체</a></li>
+                <li><a href="javascript:;" class="link">미사용</a></li>
+                <li><a href="javascript:;" class="link">사용/기간만료</a></li>
+            </ul>
+        </div>
+
+        <!-- container -->
+        <div id="container">
+            <section class="content">
+                <!-- 데이터 없을때 -->
+                <div class="nodata-wrap">
+                    <p>쿠폰이 없어요.</p>
+                </div>
+            </section>
+        </div>
+        <!-- //container -->
+    </div>
+
+    <script src="../resources/js/jquery-1.12.4.min.js"></script>
+    <script src="../resources/in_app_event/js/design.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="ko-KR">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../resources/in_app_event/css/common.css" media="screen" rel="stylesheet">
+    <title>더쎈카드</title>
+</head>
+
+<body>
+
+    <div id="wrap" class="event-wrap">
+        <!-- header -->
+        <!-- <header id="header" data-ui-fixed="top">
+        <h1 class="page-tit">이벤트</h1>
+        <button type="button" class="btn-back"><i>이전 화면으로 이동</i></button>
+    </header> -->
+        <!-- //header -->
+        <!-- container -->
+        <div id="container" class="view">
+            <section class="content">
+                <div class="event-info-wrap">
+                    <!--
+                    [D] 클래스 정의
+                    type01 : 제휴 이벤트
+                    type02 : 참여 이벤트
+                -->
+                    <span class="flag type02">참여 이벤트</span>
+                    <p class="tit">발급만 해도 네이버페이 100%증정</p>
+                    <div class="info">
+                        <span class="day">22.08.01 ~ 08.15</span><span class="state">당첨자 발표</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="../resources/in_app_event/images/img_view.png" alt="">
+                </div>
+            </section>
+        </div>
+        <!-- //container -->
+        <div data-ui-fixed="bottom">
+            <div class="btn-wrap full">
+                <button type="button" class="btn-action" onclick="UI.popupOpen.init('result01');">당첨확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- popup -->
+    <div id="pop-result01" class="ly-pop ly-btm ly-info ndim">
+        <div class="wrap">
+            <div class="content">
+                <div class="tit-wrap">
+                    <p class="tit">당첨을 축하 드립니다!</p>
+                    <span class="txt">[메가박스 영화관람권]</span>
+                </div>
+                <!-- [2022.08.30] 영역 변경 -->
+                <div class="code-container">
+                    <div class="code-wrap">
+                        <span class="code">1231B8de3</span>
+                        <button type="button" class="btn-copy">복사하기</button>
+                    </div>
+                    <div class="code-wrap">
+                        <span class="code">2343565</span>
+                        <button type="button" class="btn-copy">복사하기</button>
+                    </div>
+                    <span class="period">사용기간 : 2022.10.26</span>
+                    <!-- [토스트팝업] 복사 안내 -->
+                    <div id="pop-copy" class="ly-pop ly-toast ndim">
+                        <div class="wrap">
+                            <div class="content">
+                                <p>관람권이 복사되었습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //[토스트팝업] 복사 안내 -->
+                </div>
+                <!-- //[2022.08.30] 영역 변경 -->
+                <div class="noti-wrap">
+                    <p class="tit">유의사항</p>
+                    <ul class="txt">
+                        <li>- 본 권은 메가박스에서 상영하는 일반(2D)영화 관람이 가능합니다.</li>
+                        <li>- 본 권은 주중/주말/공휴일 사용 가능합니다.</li>
+                        <li>- 본 권은 메가박스 전국 지점에서 사용 가능합니다. (삼천포, 아트나인 제외)</li>
+                        <li>- 본 권은 일반관/컴포트관/키즈관에서 사용 가능합니다. (이외 상영관 이용불가)</li>
+                        <li>- 본 권으로 예매하신 티켓은 현금으로 환불되지 않습니다.</li>
+                        <li>- 본 권은 온라인 전용권으로 메가박스 홈페이지/모바일웹 /App을 통해 예매 하실 수 있습니다.</li>
+                        <li>- 예매 후 상영시간 20분 전까지만 취소 가능합니다.</li>
+                        <li>- 본 권의 유효기간은 11/30까지이며, 유효기간이 만료된 관람권은 기간 연장 및 사용이 불가합니다.</li>
+                        <li>- 본 권으로 영화 예매 시 관람일 익일 메가박스 규정에 의해 일정 포인트가 적립됩니다.</li>
+                    </ul>
+                </div>
+            </div>
+            <div data-ui-fixed="bottom">
+                <div class="btn-wrap full more">
+                    <button type="button" class="btn-action" onclick="UI.popupClose.init('result01');">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //popup -->
+
+
+    <script src="../resources/js/jquery-1.12.4.min.js"></script>
+    <script src="../resources/in_app_event/js/design.js"></script>
+    <script>
+        $(function () {
+            UI.popupOpen.init('result01');
+            // [2022.08.30] 코드 복사 수정
+            $('.btn-copy').on("click", function () {
+                var copyText = $(this).parent(".code-wrap").find(".code")[0];
+                var textArea = document.createElement("textarea");
+                textArea.value = copyText.innerHTML;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand("copy");
+                textArea.remove();
+                UI.popupOpen.init('copy', function () { UI.popupClose.init('copy'); })
+            });
+        });
+    </script>
+</body>
+
+</html>

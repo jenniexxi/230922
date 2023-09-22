@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Language" content="ko-KR">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <link href="../resources/in_app_event/css/common.css" media="screen" rel="stylesheet">
+  <title>더쎈카드</title>
+</head>
+
+<body>
+  <div class="ly-pop ly-full show" id="pop-full" style="display: block;">
+    <section class="wrap type-full">
+      <div class="header">
+        <h2 class="ly-title"><span class="blind">의견남기기</span></h2>
+        <button class="btn-close" onclick="UI.popupClose.init('full');"><i>닫기</i></button>
+      </div>
+      <div class="content">
+        <div class="inner type01">
+          <div class="form-reply">
+            <div class="form-reply-header">
+              <div class="text-box">
+                <p class="text-01">더욱 노력하겠습니다</p>
+                <p class="text-02">더쎈카드에 바라는 점을 알려주세요</p>
+              </div>
+              <span class="check-length">
+                0/500
+              </span>
+            </div>
+            <div class="form-reply-content">
+              <div class="textarea-box">
+                <textarea name="" id="" placeholder="서비스를 이용하면서 불편하거나 개선이 필요한 부분을 적어주시면, 빠른 시일 내로 개선하겠습니다."></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-wrap type2">
+        <button class="btn-basic sm size-l">다음에</button>
+        <button class="btn-action size-l" disabled onclick="UI.popupClose.init('full', () =>{UI.popupOpen.init('copy', () =>{UI.popupClose.init('copy')})})">의견 보내기</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- [D] [23.06.22] 토스트 팝업 추가 -->
+  <div id="pop-copy" class="ly-pop ly-toast02 ndim" style="left: 0px;">
+    <div class="wrap">
+      <div class="content">
+        <p>더쎈카드로 의견을 보냈어요</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../resources/js/jquery-1.12.4.min.js"></script>
+  <script src="../resources/js/design-ui.js"></script>
+  <script src="../resources/in_app_event/js/design.js"></script>
+  <!-- 퍼블 확인용 -->
+  <script>
+    $length = document.querySelector('.check-length');
+    $textarea = document.querySelector('textarea');
+    $btnSubmit = document.querySelector('.btn-action');
+    $textarea.addEventListener('input', (e) => {
+      $length.textContent = `${e.currentTarget.value.length}/500`;
+      if (!e.currentTarget.value.length) {
+        console.log(12321313)
+        $btnSubmit.disabled = true;
+      } else if (e.currentTarget.value.length > 500) {
+        $length.classList.add('error');
+        $btnSubmit.disabled = true;
+      } else {
+        $length.classList.remove('error');
+        $btnSubmit.disabled = false;
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="ko-KR">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../resources/in_app_event/css/common.css" media="screen" rel="stylesheet">
+    <title>더쎈카드</title>
+</head>
+
+<body>
+
+    <div id="wrap" class="event-wrap">
+        <!-- header -->
+        <!-- <header id="header" data-ui-fixed="top">
+        <h1 class="page-tit">이벤트</h1>
+        <button type="button" class="btn-back"><i>이전 화면으로 이동</i></button>
+    </header> -->
+        <!-- //header -->
+        <!-- container -->
+        <div id="container" class="view">
+            <section class="content">
+                <div class="event-info-wrap">
+                    <!--
+                    [D] 클래스 정의
+                    type01 : 제휴 이벤트
+                    type02 : 참여 이벤트
+                -->
+                    <span class="flag type02">참여 이벤트</span>
+                    <p class="tit">발급만 해도 네이버페이 100%증정</p>
+                    <div class="info">
+                        <span class="day">22.08.01 ~ 08.15</span><span class="state">당첨자 발표</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="../resources/in_app_event/images/img_happypoint.png" alt="">
+                </div>
+            </section>
+        </div>
+        <!-- //container -->
+        <div data-ui-fixed="bottom">
+            <div class="btn-wrap full">
+                <button type="button" class="btn-action" onclick="UI.popupOpen.init('result01');">코드입력</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- popup -->
+    <div id="pop-result01" class="ly-pop ly-btm ly-info ndim">
+        <div class="wrap">
+            <div class="content">
+                <div class="tit-wrap">
+                    <p class="tit">프로모션 코드 입력하기</p>
+                    <span class="txt">[해피포인트 쿠폰]</span>
+                </div>
+                <!-- 코드입력 전 -->
+                <div class="before-wrap">
+                    <div class="code-container">
+                        <div class="code-wrap type02">
+                            <div class="code"><input type="text" placeholder="코드를 입력해주세요."></div>
+                            <button type="button" class="btn-coupon">쿠폰받기</button>
+                        </div>
+                    </div>
+                    <p class="cs-txt">해피포인트APP에서 더쎈카드 이벤트 프로모션 코드를 확인하고 입력해주세요.<br><br>고객센터 <span
+                            class="cs">cs@thessencard.co.kr</span> 로 연락 바랍니다.</p>
+                </div>
+                <!-- //코드입력 전 -->
+                <!-- 코드입력 후 -->
+                <div class="after-wrap" style="display:none">
+                    <div class="code-container">
+                        <div class="code-wrap">
+                            <span class="code">1231B8de3</span>
+                            <button type="button" class="btn-copy">복사하기</button>
+                        </div>
+                        <!-- [토스트팝업] 복사 안내 -->
+                        <div id="pop-copy" class="ly-pop ly-toast ndim">
+                            <div class="wrap">
+                                <div class="content">
+                                    <p>코드가 복사되었습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //[토스트팝업] 복사 안내 -->
+                    </div>
+                    <div class="noti-wrap">
+                        <p class="tit">쿠폰사용방법</p>
+                        <ul class="txt">
+                            <li>· 해피포인트 APP 로그인 > 제휴쿠폰 적립 > 브랜드 '헥토이노베이션' 선택 > 쿠폰번호 입력</li>
+                            <li>· 적립하신 포인트는 해피포인트 APP 내 마이페이지 > My 포인트 내역에서 확인하실 수 있습니다.</li>
+                        </ul>
+                        <p class="cs-txt">고객센터 <span class="cs">cs@thessencard.co.kr</span> 로 연락 바랍니다.</p>
+                    </div>
+                </div>
+
+                <!-- //코드입력 후 -->
+            </div>
+            <div data-ui-fixed="bottom">
+                <div class="btn-wrap full more">
+                    <button type="button" class="btn-action" onclick="UI.popupClose.init('result01');">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //popup -->
+
+
+    <script src="../resources/js/jquery-1.12.4.min.js"></script>
+    <script src="../resources/in_app_event/js/design.js"></script>
+    <script>
+        $(function () {
+
+            // 코드 복사
+            $('.btn-copy').on("click", function () {
+                var copyText = $(this).parent(".code-wrap").find(".code")[0];
+                var textArea = document.createElement("textarea");
+                textArea.value = copyText.innerHTML;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand("copy");
+                textArea.remove();
+                UI.popupOpen.init('copy', function () { UI.popupClose.init('copy'); })
+            });
+
+            //[2022.09.20] 쿠폰 받기 클릭시 복사하기 영역 노출
+            $('.before-wrap .btn-coupon').on("click", function () {
+                $(".before-wrap").hide();
+                $(".after-wrap").show();
+            });
+
+        });
+    </script>
+</body>
+
+</html>

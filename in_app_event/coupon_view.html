@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="ko-KR">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../resources/in_app_event/css/common.css" media="screen" rel="stylesheet">
+    <title>더쎈카드</title>
+</head>
+
+<body>
+
+    <div id="wrap" class="coupon-wrap">
+        <div data-ui-fixed="top">
+            <header id="header">
+                <h1 class="page-tit">받은 쿠폰</h1>
+                <button type="button" class="btn-back"><i>이전 화면으로 이동</i></button>
+            </header>
+        </div>
+        <!-- container -->
+        <div id="container" class="coupon-view">
+            <section class="content">
+                <div class="img-info">
+                    <div class="img-wrap">
+                        <img src="../resources/in_app_event/images/img_logo.png" alt="">
+                        <span class="txt">롯데시네마</span>
+                    </div>
+                    <div class="coupon-info">
+                        <strong class="tit">롯데시네마 영화관람권</strong>
+                        <figure class="barcode">
+                            <img src="../resources/in_app_event/images/barcode.png" alt="">
+                        </figure>
+                        <figcaption>1234 5678 9012 0914</figcaption>
+                    </div>
+                </div>
+                <div class="txt-info">
+                    <ul class="coupon-detail">
+                        <li>
+                            <strong>발급일</strong>
+                            <span>2022년 08월 24일</span>
+                        </li>
+                        <li>
+                            <strong>유효기간</strong>
+                            <span>2022년 08월 24일</span>
+                        </li>
+                        <li>
+                            <strong>상태</strong>
+                            <span>미사용</span>
+                        </li>
+                    </ul>
+                    <div class="txt-info-wrap">
+                        <strong class="con-tit">이용안내</strong>
+                        <ul class="txt-list">
+                            <li>본 쿠폰은 전국 롯데시네마 중 일부 특수 점포를 제외 하고 사용이 가능합니다.</li>
+                            <li>본 쿠폰은 전국 롯데시네마 중 일부 특수 점포를 제외 하고 사용이 가능합니다.</li>
+                            <li>본 쿠폰은 전국 롯데시네마 중 일부 특수 점포를 제외 하고 사용이 가능합니다.</li>
+                            <li>본 쿠폰은 전국 롯데시네마 중 일부 특수 점포를 제외 하고 사용이 가능합니다.</li>
+                            <li>본 쿠폰은 전국 롯데시네마 중 일부 특수 점포를 제외 하고 사용이 가능합니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- //container -->
+        <div data-ui-fixed="bottom">
+            <div class="btn-wrap full">
+                <button type="button" class="btn-action"
+                    onclick="UI.popupOpen.init('copy',function(){UI.popupClose.init('copy');})">쿠폰번호 복사하기</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="pop-copy" class="ly-pop ly-toast02 ndim">
+        <div class="wrap">
+            <div class="content">
+                <p>쿠폰이 복사되었습니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../resources/js/jquery-1.12.4.min.js"></script>
+    <script src="../resources/in_app_event/js/design.js"></script>
+</body>
+
+</html>

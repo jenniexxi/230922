@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Language" content="ko-KR">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <link href="../resources/in_app_event/css/common.css" media="screen" rel="stylesheet">
+  <title>더쎈카드</title>
+</head>
+
+<body>
+
+  <div id="wrap" class="event-view-wrap">
+    <!-- container -->
+    <div id="container" class="view">
+      <section class="content">
+        <div class="event-info-wrap">
+          <!--
+                  [D] 클래스 정의
+                  type01 : 제휴 이벤트
+                  type02 : 참여 이벤트
+              -->
+          <span class="flag type02">참여 이벤트</span>
+          <p class="tit">발급만 해도 네이버페이 100%증정</p>
+          <div class="info">
+            <span class="day">22.08.01 ~ 08.15</span><span class="state">당첨자 발표</span>
+          </div>
+        </div>
+        <div class="event-img-wrap">
+          <img src="../resources/in_app_event/images/img_happypoint_02.png" alt="해피포인트 이벤트">
+        </div>
+      </section>
+    </div>
+    <!-- //container -->
+    <div data-ui-fixed="bottom">
+      <div class="btn-wrap full">
+        <button type="button" class="btn-action" onclick="UI.popupOpen.init('result01');">카드자산 관리 시작!</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../resources/js/jquery-1.12.4.min.js"></script>
+  <script src="../resources/in_app_event/js/design.js"></script>
+</body>
+
+</html>

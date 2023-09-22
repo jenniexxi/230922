@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Language" content="ko-KR">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <link href="../resources/in_app_event/css/common.css" media="screen" rel="stylesheet">
+  <title>더쎈카드</title>
+</head>
+
+<body>
+
+  <div id="wrap">
+    <div data-ui-fixed="top">
+      <header id="header">
+        <h1 class="page-tit">더쎈 카드 결산 결과</h1>
+        <button type="button" class="btn-back"><i>이전 화면으로 이동</i></button>
+        <button type="button" class="btn-help" onclick="UI.popupOpen.init('help');"><i>도움말</i></button>
+      </header>
+    </div>
+    <!-- container -->
+    <div id="container" class="card-analysis">
+      <section class="content">
+        <div class="card-analysis-summary">
+          <div class="card-analysis-top-bg">
+            <h2 class="card-analysis-desc-06">김더쎈님의 진단 결과입니다</h2>
+          </div>
+          <div class="card-analysis-result">
+            <div class="card-analysis-graph lv-1" aria-label="1등급"></div>
+            <p class="card-analysis-desc-07"><span class="em">당신을 혜택 고수</span>로 인정합니다!</p>
+            <p class="card-analysis-desc-08">남은 하반기도 더쎈카드가<br>최선의 소비를 응원합니다!</p>
+            <p class="card-analysis-desc-09">더쎈카드 회원들의<br>290만장 카드 혜택 분석 데이터 기준</p>
+          </div>
+          <div class="card-analysis-result">
+            <div class="card-analysis-graph lv-2" aria-label="2등급"></div>
+            <p class="card-analysis-desc-07"><span class="em">조금 더 보완</span>하면 완벽합니다!</p>
+            <p class="card-analysis-desc-08">남은 하반기는 더쎈카드와 함께<br>1등급에 도전하세요!</p>
+            <p class="card-analysis-desc-09">더쎈카드 회원들의<br>290만장 카드 혜택 분석 데이터 기준</p>
+          </div>
+          <div class="card-analysis-result">
+            <div class="card-analysis-graph lv-3" aria-label="3등급"></div>
+            <p class="card-analysis-desc-07"><span class="em">앞으로의 관리</span>가 중요합니다!</p>
+            <p class="card-analysis-desc-08">하반기에 더 잘할 수 있도록<br>더쎈카드도 분발 할게요!</p>
+            <p class="card-analysis-desc-09">더쎈카드 회원들의<br>290만장 카드 혜택 분석 데이터 기준</p>
+          </div>
+          <div class="card-analysis-result">
+            <div class="card-analysis-graph lv-4" aria-label="4등급"></div>
+            <p class="card-analysis-desc-07"><span class="em">꼼꼼한 관리</span>가 꼭 필요한 당신!</p>
+            <p class="card-analysis-desc-08">지금부터 더쎈카드를 통해<br>꾸준히 관리해 보세요!</p>
+            <p class="card-analysis-desc-09">더쎈카드 회원들의<br>290만장 카드 혜택 분석 데이터 기준</p>
+          </div>
+          <div class="card-analysis-result">
+            <div class="card-analysis-graph lv-5" aria-label="5등급"></div>
+            <p class="card-analysis-desc-07"><span class="em">포기하지 말고</span> 분발해주세요!</p>
+            <p class="card-analysis-desc-08">걱정말아요! 더쎈카드와 함께 하시면<br>어렵지 않아요!</p>
+            <p class="card-analysis-desc-09">더쎈카드 회원들의<br>290만장 카드 혜택 분석 데이터 기준</p>
+          </div>
+          <div class="card-analysis-compare">
+            <div class="card-analysis-compare-item">
+              <h3 class="card-analysis-sub-title">카드 사용 금액</h3>
+              <span class="text-01">30대 월 평균 대비</span>
+              <p class="text-02">21만원을 더 소비했어요</p>
+              <div class="bar-box">
+                <div class="bar-info">
+                  <p class="text-03">30대 평균<br>72만원</p>
+                  <p class="text-03"><span class="em">김더쎈님</span><br><span class="em blue">78만원</span></p>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-item">
+                    <!-- [D] 막대 그래프 사이즈 --percentage: 0~100 -->
+                    <div class="bar-graph" style="--percentage: 30"></div>
+                  </div>
+                  <div class="bar-item user">
+                    <div class="bar-graph" style="--percentage: 80"></div>
+                  </div>
+                </div>
+              </div>
+              <p class="text-04">평균 대비 사용 금액이 적다면?</p>
+              <p class="text-05">
+                카드 혜택 제공을 위한 '<span class="em">최소 실적 금액</span>'에 못 미치는 소비는 아닌지 카드별 실적 점검이 필요해요. 지출액이 매월 30만원 미만이라면, 무실적 카드 사용이 유리해요.</p>
+              <p class="text-04">평균 대비 카드 사용 금액이 많다면?</p>
+              <p class="text-05">
+                카드 별 실적 금액이 '초과 달성' 중인지 확인해 보세요. 사용 금액이 많을수록 소비 카테고리 별 <span class="em">혜택 특화 카드</span>를 사용하면 혜택을 극대화할 수 있어요!</p>
+              <p class="text-04">더 현명한 소비 습관을 위해</p>
+              <p class="text-05">
+                결제 전 더쎈카드의 '<span class="em">혜택 찾기</span>' 기능을 활용해 보세요. 결제처를 검색하면 내 카드로 지금 받을 수 있는 혜택이 있는지, 얼마나 받을 수 있는지 까지 모두 알려드려요.</p>
+            </div>
+            <div class="card-analysis-compare-item">
+              <h3 class="card-analysis-sub-title">카드 혜택</h3>
+              <span class="text-01">30대 월 평균 대비</span>
+              <p class="text-02">혜택을 8천원 덜 받았어요</p>
+              <div class="bar-box">
+                <div class="bar-info">
+                  <p class="text-03">30대 평균<br>1만 5천원</p>
+                  <p class="text-03"><span class="em">김더쎈님</span><br><span class="em blue">5천원</span></p>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-item">
+                    <!-- [D] 막대 그래프 사이즈 --percentage: 0~100 -->
+                    <div class="bar-graph" style="--percentage: 30"></div>
+                  </div>
+                  <div class="bar-item user">
+                    <div class="bar-graph" style="--percentage: 80"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="divider"></div>
+              <span class="text-01">30대 월 평균 대비</span>
+              <p class="text-02">약 9% 낮은 혜택률로<br>카드를 사용하고 있어요</p>
+              <div class="bar-box">
+                <div class="bar-info">
+                  <p class="text-03">30대 평균<br>12%</p>
+                  <p class="text-03"><span class="em">김더쎈님</span><br><span class="em blue">3%</span></p>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-item">
+                    <!-- [D] 막대 그래프 사이즈 --percentage: 0~100 -->
+                    <div class="bar-graph" style="--percentage: 30"></div>
+                  </div>
+                  <div class="bar-item user">
+                    <div class="bar-graph" style="--percentage: 80"></div>
+                  </div>
+                </div>
+              </div>
+              <p class="text-04">훌륭해요!</p>
+              <p class="text-05">
+                진정한 카드 혜택 고수라면 신용/체크카드 사용 비중도 관리해 보세요. <span class="em">체크카드는 소득공제 비율이 30%</span>로, 잘 활용하면 연말 정산 때 높은 공제율이 적용됩니다.<br><br>
+                <span class="color-blue em">더쎈 TMI</span><br>
+                전체 소득의 25%를 초과한 지출에만 소득 공제가 적용됩니다. 소득의 2/3이상 소비한다면 신용/체크 카드 하나만 사용해도 최대 공제 금액(300만원)이 적용되는 점 유의하세요! 
+              </p>
+              <p class="text-04">더 많은 혜택을 받으려면?</p>
+              <p class="text-05">
+                내 카드가 제공하는 <span class="em">혜택을 잘 알고 쓰는것이 기본!</span> 내 지출 금액이 혜택을 부여 받는 기준인 '<span class="em">최소 실적</span>' 을 충족하는지도 함께 확인해 보세요. 두 가지 모두 더쎈카드의 '<span class="em">내 카드</span>' 메뉴에서 쉽게 확인 할 수 있어요.</p>
+              <p class="text-04">평균 대비 카드 혜택이 적다면?</p>
+              <p class="text-05">
+                카드 실적을 채우고도 평균 대비 혜택 금액, 혜택률이 모두 낮다면 나의 소비 패턴과 잘 맞지 않는 카드일 수 있어요. 더쎈카드 카드 찾기 메뉴의 '<span class="em">AI카드 분석</span>'을 통해 더 많은 혜택을 받을 수 있는 카드를 확인해 보세요.
+              </p>
+            </div>
+        </div>
+        <div class="card-analysis-detail">
+          <h2 class="card-analysis-title type-01 col">김더쎈님의<br><span>카드별 현황 진단 <i class="icon-01"></i></span></h2>
+          <ul class="card-analysis-detail-list hidden">
+            <li class="card-analysis-detail-item">
+              <div class="card-info">
+                <!-- [D] 카드 이미지 - 세로 방향 -->
+                <div class="card-slot">
+                  <img src="../resources/in_app_event/images/img_dummy_card.png" alt="" class="rotate-img">
+                </div>
+                <div class="text-box">
+                  <span class="text-01">LOCA CLASSIC</span>
+                  <span class="text-02">혜택률 12.4%</span>
+                </div>
+                <i class="icon-state good"></i>
+              </div>
+              <div class="desc-box">
+                <p class="desc-01">훌륭해요! 평균 대비 <span class="color-blue">2% 더 받았어요</span></p>
+                <p class="desc-03">내 소비 패턴과 맞는 카드인지 점검해 보세요</p>
+              </div>
+              <dl class="card-history">
+                <div class="card-history-item">
+                  <dt>사용금액</dt>
+                  <dd>4,340,230 원</dd>
+                </div>
+                <div class="card-history-item">
+                  <dt>혜택금액</dt>
+                  <dd>242,410 원</dd>
+                </div>
+                <div class="card-history-item">
+                  <dt>연회비</dt>
+                  <dd>20,000 원</dd>
+                </div>
+              </dl>
+              <div class="benefit-box">
+                <p class="desc-02">받은 혜택 BEST 3</p>
+                <ul class="benefit-list">
+                  <li class="benefit-item">항공마일리지</li>
+                  <li class="benefit-item">커피</li>
+                  <li class="benefit-item">구독서비스</li>
+                  <li class="benefit-item">음식점</li>
+                  <li class="benefit-item">대형마트</li>
+                  <li class="benefit-item">대중교통</li>
+                </ul>
+              </div>
+            </li>
+            <li class="card-analysis-detail-item">
+              <div class="card-info">
+                <div class="card-slot">
+                  <img src="../resources/in_app_event/images/img_dummy_card.png" alt="">
+                </div>
+                <div class="text-box">
+                  <span class="text-01">LOCA CLASSIC</span>
+                  <span class="text-02">혜택률 12.4%</span>
+                </div>
+                <i class="icon-state normal"></i>
+              </div>
+              <div class="desc-box">
+                <p class="desc-01">훌륭해요! 평균 대비 <span class="color-blue">2% 더 받았어요</span></p>
+                <p class="desc-03">내 소비 패턴과 맞는 카드인지 점검해 보세요</p>
+              </div>
+              <dl class="card-history">
+                <div class="card-history-item">
+                  <dt>사용금액</dt>
+                  <dd>4,340,230 원</dd>
+                </div>
+                <div class="card-history-item">
+                  <dt>혜택금액</dt>
+                  <dd>242,410 원</dd>
+                </div>
+                <div class="card-history-item">
+                  <dt>연회비</dt>
+                  <dd>20,000 원</dd>
+                </div>
+              </dl>
+              <div class="benefit-box">
+                <p class="desc-02">받은 혜택 BEST 3</p>
+                <ul class="benefit-list">
+                  <li class="benefit-item">음식점</li>
+                  <li class="benefit-item">대형마트</li>
+                  <li class="benefit-item">대중교통</li>
+                  <li class="benefit-item">커피</li>
+                  <li class="benefit-item">구독서비스</li>
+                </ul>
+              </div>
+            </li>
+            <li class="card-analysis-detail-item">
+              <div class="card-info">
+                <div class="card-slot">
+                  <img src="../resources/in_app_event/images/img_dummy_card.png" alt="">
+                </div>
+                <div class="text-box">
+                  <span class="text-01">LOCA CLASSIC</span>
+                  <span class="text-02">혜택률 12.4%</span>
+                </div>
+                <i class="icon-state bad"></i>
+              </div>
+              <div class="desc-box">
+                <p class="desc-01">훌륭해요! 평균 대비 <span class="color-blue">2% 더 받았어요</span></p>
+                <p class="desc-03">내 소비 패턴과 맞는 카드인지 점검해 보세요</p>
+              </div>
+              <dl class="card-history">
+                <div class="card-history-item">
+                  <dt>사용금액</dt>
+                  <dd>4,340,230 원</dd>
+                </div>
+                <div class="card-history-item">
+                  <dt>혜택금액</dt>
+                  <dd>242,410 원</dd>
+                </div>
+                <div class="card-history-item">
+                  <dt>연회비</dt>
+                  <dd>20,000 원</dd>
+                </div>
+              </dl>
+              <div class="benefit-box">
+                <p class="desc-02">받은 혜택 BEST 3</p>
+                <ul class="benefit-list">
+                  <li class="benefit-item">대형마트</li>
+                  <li class="benefit-item">대중교통</li>
+                  <li class="benefit-item">구독서비스</li>
+                </ul>
+              </div>
+            </li>
+            <li class="card-analysis-detail-item">
+              <div class="card-info">
+                <div class="card-slot">
+                  <img src="../resources/in_app_event/images/img_dummy_card.png" alt="">
+                </div>
+                <div class="text-box">
+                  <span class="text-01">LOCA CLASSIC</span>
+                  <span class="text-02">혜택률 12.4%</span>
+                </div>
+                <i class="icon-state normal"></i>
+              </div>
+              <div class="desc-box">
+                <p class="desc-01">훌륭해요! 평균 대비 <span class="color-blue">2% 더 받았어요</span></p>
+                <p class="desc-03">내 소비 패턴과 맞는 카드인지 점검해 보세요</p>
+              </div>
+              <dl class="card-history">
+                <div class="card-history-item">
+                  <dt>사용금액</dt>
+                  <dd>4,340,230 원</dd>
+                </div>
+                <div class="card-history-item">
+                  <dt>혜택금액</dt>
+                  <dd>242,410 원</dd>
+                </div>
+                <div class="card-history-item">
+                  <dt>연회비</dt>
+                  <dd>20,000 원</dd>
+                </div>
+              </dl>
+              <div class="benefit-box">
+                <p class="desc-02">받은 혜택 BEST 3</p>
+                <ul class="benefit-list">
+                  <li class="benefit-item">음식점</li>
+                  <li class="benefit-item">대형마트</li>
+                  <li class="benefit-item">대중교통</li>
+                  <li class="benefit-item">커피</li>
+                  <li class="benefit-item">구독서비스</li>
+                </ul>
+              </div>
+            </li>
+            <li class="card-analysis-detail-item">
+              <div class="card-info">
+                <div class="card-slot">
+                  <img src="../resources/in_app_event/images/img_dummy_card.png" alt="">
+                </div>
+                <div class="text-box">
+                  <span class="text-01">LOCA CLASSIC</span>
+                  <span class="text-02">혜택률 12.4%</span>
+                </div>
+                <i class="icon-state bad"></i>
+              </div>
+              <div class="desc-box">
+                <p class="desc-01">훌륭해요! 평균 대비 <span class="color-blue">2% 더 받았어요</span></p>
+                <p class="desc-03">내 소비 패턴과 맞는 카드인지 점검해 보세요</p>
+              </div>
+              <dl class="card-history">
+                <div class="card-history-item">
+                  <dt>사용금액</dt>
+                  <dd>4,340,230 원</dd>
+                </div>
+                <div class="card-history-item">
+                  <dt>혜택금액</dt>
+                  <dd>242,410 원</dd>
+                </div>
+                <div class="card-history-item">
+                  <dt>연회비</dt>
+                  <dd>20,000 원</dd>
+                </div>
+              </dl>
+              <div class="benefit-box">
+                <p class="desc-02">받은 혜택 BEST 3</p>
+                <ul class="benefit-list">
+                  <li class="benefit-item">대형마트</li>
+                  <li class="benefit-item">대중교통</li>
+                  <li class="benefit-item">구독서비스</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <!-- [D] 클릭 시 더보기 남은 카드 노출, 클릭 후 버튼 텍스트 '접기' 로 변경
+            '모든 카드 보기' 버튼 노출 조건: 카드 4장부터 노출, 3장까지는 비노출
+          -->
+          <button type="button" class="btn-view-toggle">모든 카드 보기</button>
+          <p class="desc-01">항공 마일리지, 백화점 쿠폰, 청구 할인은 진단에서 제외</p>
+        </div>
+        <!-- [D] 2023.08.09 카드 추천 배너 추가 -->
+        <!-- 점검 카드 X -->
+        <div class="card-analysis-content type-banner">
+          <img src="../resources/in_app_event/images/img_cardrcmd_01.png" alt="">
+          <a href="javascript:;" class="banner-link"></a>
+        </div>
+        <!-- 점검 카드 O -->
+        <div class="card-analysis-content type-banner" style="display: none;">
+          <img src="../resources/in_app_event/images/img_cardrcmd_02.png" alt="">
+          <a href="javascript:;" class="banner-link"></a>
+        </div>
+        <!-- [D] 23.07.20 결산 디자인 수정 -->
+        <div class="card-analysis-content type-03">
+          <p class="desc-01">'2023 상반기 더쎈 카드 결산'이 유용하셨나요?</p>
+          <p class="desc-02">도움이 되셨다면 <span class="color-blue">지인에게 추천</span>하고<br><span class="color-blue">설문도 참여</span>해 보세요</p>
+          <div class="btn-wrap full">
+            <button class="btn-action share" onclick="UI.popupOpen.init('terms');">지금 추천하기</button>
+            <p class="desc-03">추천 횟수가 <span class="bold">많을 수록</span> 경품 당첨 확률 UP!</p>
+            <p class="desc-04">나의 진단 결과는 공유되지 않아요. 안심하세요!</p>
+          </div>
+          <div class="bar"></div>
+          <div class="btn-wrap full">
+            <button class="btn-action survey" onclick="UI.popupOpen.init('terms');">설문 참여하기</button>
+            <p class="desc-03"><span class="bold">한 번만</span> 참여해도 경품 당첨 확률 UP!</p>
+            <p class="desc-04">소중한 의견으로 더 나은 서비스를 만듭니다.</p>
+          </div>
+          <div class="bar"></div>
+          <div class="btn-wrap full">
+            <button class="btn-action survey" onclick="UI.popupOpen.init('terms');" disabled>설문 참여 완료!</button>
+            <p class="desc-03"><span class="bold">한 번만</span> 참여해도 경품 당첨 확률 UP!</p>
+            <p class="desc-04">소중한 의견으로 더 나은 서비스를 만듭니다.</p>
+          </div>
+        </div>
+        <div class="card-analysis-content">
+          <h2 class="card-analysis-title">현명한 카드생활, 어렵지 않아요</h2>
+          <p class="card-analysis-desc-03">더쎈카드와 함께 내 소비를 정확히 아는 것부터 시작해보세요</p>
+          <details class="card-analysis-acc">
+            <summary>
+              <span class="num">1</span>
+              <p class="desc-01">신용카드, 여러장 만들어도<br><span class="color-blue">신용점수 안 떨어져요</span></p>
+            </summary>
+            <div class="card-analysis-acc-content">
+              <p class="desc-02">
+                신용카드 발급 개수와 신용점수는 무관합니다.
+                단순히 여러 장의 신용카드를 보유한다고 해서 신용점수가 떨어지진 않아요.
+                <br><br>
+                오히려 오래 자주 사용한 신용카드를 해지할 때 신용점수에 영향을 끼칠 수 있으니 이 점 유의하세요!
+              </p>
+            </div>
+          </details>
+          <details class="card-analysis-acc">
+            <summary>
+              <span class="num">2</span>
+              <p class="desc-01">신용카드, <span class="color-blue">한도 관리 불변의 법칙</span><br>이것만 기억하세요</p>
+            </summary>
+            <div class="card-analysis-acc-content">
+              <!-- [D] 기획에서 별도로 개발에 문구 전달 예정 -->
+              <p class="desc-02">
+                신용카드 발급 개수와 신용점수는 무관합니다.
+                단순히 여러 장의 신용카드를 보유한다고 해서 신용점수가 떨어지진 않아요.
+                <br><br>
+                오히려 오래 자주 사용한 신용카드를 해지할 때 신용점수에 영향을 끼칠 수 있으니 이 점 유의하세요!
+              </p>
+              <!-- // [D] 기획에서 별도로 개발에 문구 전달 예정 -->
+            </div>
+          </details>
+          <details class="card-analysis-acc">
+            <summary>
+              <span class="num">3</span>
+              <p class="desc-01"><span class="color-blue">청구금액과 사용금액</span><br>무엇이 다른가요?</p>
+            </summary>
+            <div class="card-analysis-acc-content">
+              <!-- [D] 기획에서 별도로 개발에 문구 전달 예정 -->
+              <p class="desc-02">
+                신용카드 발급 개수와 신용점수는 무관합니다.
+                단순히 여러 장의 신용카드를 보유한다고 해서 신용점수가 떨어지진 않아요.
+                <br><br>
+                오히려 오래 자주 사용한 신용카드를 해지할 때 신용점수에 영향을 끼칠 수 있으니 이 점 유의하세요!
+              </p>
+              <!-- // [D] 기획에서 별도로 개발에 문구 전달 예정 -->
+            </div>
+          </details>
+        </div>
+        <div class="card-analysis-content">
+          <h2 class="card-analysis-title">더 나은 카드가 있는지<br>점검해 보세요<i class="icon-card"></i></h2>
+          <p class="card-analysis-desc-04">소비데이터 기반으로 딱맞는 카드를 추천해드려요</p>
+          <div class="btn-wrap full">
+            <button class="btn-basic">카드 추천 받기</button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- //container -->
+  </div>
+  <div class="ly-pop ly-btm" id="pop-terms">
+    <section class="wrap type02">
+      <div class="content">
+        <h2 class="title-01">마케팅 정보 수신을 동의해야<br>당첨 안내를 받을 수 있어요</h2>
+        <ul class="term-chk-list">
+          <li>
+            <span class="chk">
+              <input type="checkbox" name="terms" id="terms01">
+              <label for="terms01">마케팅 목적 개인정보 수집·이용 동의(선택)</label>
+            </span>
+            <button type="button" class="btn-link" onclick="UI.popupOpen.init('terms');"><span class="blind">약관 상세보기</span></button>
+          </li>
+          <li>
+            <span class="chk">
+              <input type="checkbox" name="terms" id="terms02">
+              <label for="terms02">마케팅 정보 수신 동의(선택)</label>
+            </span>
+            <button type="button" class="btn-link" onclick="UI.popupOpen.init('terms');"><span class="blind">약관 상세보기</span></button>
+          </li>
+        </ul>
+        <ul class="list-01">
+          <li>동의 철회는 [설정 &gt; 알림 설정] 에서 변경 가능해요</li>
+          <li>마케팅 정보 수신 동의한 고객에 한해 응모신청 및 경품지급이 가능해요</li>
+        </ul>
+      </div>
+      <div class="btn-wrap">
+        <button class="btn-basic sm">괜찮아요</button>
+        <button class="btn-action">동의하기</button>
+      </div>
+      <button class="btn-close" onclick="UI.popupClose.init('terms');"><i>닫기</i></button>
+    </section>
+  </div>
+  <div class="ly-pop ly-full" id="pop-help">
+    <section class="wrap type-full">
+      <div class="header">
+        <h2 class="ly-title">도움말</h2>
+        <button class="btn-back" onclick="UI.popupClose.init('help');"><i>뒤로가기</i></button>
+      </div>
+      <div class="content">
+        <div class="inner">
+          <h2 class="card-analysis-title">상반기 카드 결산<br>궁금증 타파!</h2>
+          <ul class="help-list">
+            <li class="help-item">
+              <span class="num">1</span>
+              <p class="desc-03">2023년 상반기 카드 결산은 어떤 기간을 기준으로 하나요?</p>
+              <p class="desc-04"><span class="color-blue">올해 1월부터 6월 까지</span>의 데이터로 계산했어요.</p>
+            </li>
+            <li class="help-item">
+              <span class="num">2</span>
+              <p class="desc-03">사용 금액, 혜택 금액 평균은 어떤 기준으로 비교했나요?</p>
+              <p class="desc-04"><span class="color-blue">나와 같은 연령대/소비 금액</span>을 사용한 그룹 기준으로 비교했어요.의 데이터로 계산했어요.</p>
+            </li>
+            <li class="help-item">
+              <span class="num">3</span>
+              <p class="desc-03">카드별 진단 기준은 무엇인가요?</p>
+              <p class="desc-04">나와 <span class="color-blue">같은 카드</span>를 쓰는 사용자와 비교했어요.</p>
+              <dl>
+                <dt class="text-01">좋음</dt>
+                <dd class="desc-04">
+                  <span class="color-blue">평균 이상</span>의 혜택을 받았어요. 나의 소비 패턴에 맞게 카드를 잘 사용하고 있어요.
+                </dd>
+                <dt class="text-01">보통</dt>
+                <dd class="desc-04">
+                  <span class="color-blue">평균 수준</span>의 혜택을 받았어요.
+                  실적을 달성하지 못해서 낮은 혜택을 받고 있거나 혜택을 받았지만 잘 못 쓰고 있어요. 내 카드에 어떤 혜택이 있는지 확인해 보시면 어떨까요?
+                </dd>
+                <dt class="text-01">점검</dt>
+                <dd class="desc-04">
+                  <span class="color-blue">평균 이하</span>의 혜택을 받았어요.
+                  나의 소비 패턴과 맞는 카드인지 점검이 꼭 필요해요.
+                </dd>
+              </dl>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="btn-wrap type2">
+        <button class="btn-action size-l" onclick="UI.popupClose.init('help');">확인</button>
+      </div>
+
+    </section>
+  </div>
+  <div class="ly-pop ly-btm" id="pop-review">
+    <section class="wrap type02">
+      <div class="content" style="min-height: 31.1rem">
+        <div class="img-box type01">
+          <img src="../resources/in_app_event/images/img_card_payment.png" alt="" style="max-width: 18.1rem">
+        </div>
+        <p class="desc-01">더쎈카드가 카드생활에 도움 되셨나요?</p>
+      </div>
+      <div class="btn-wrap">
+        <button class="btn-basic sm">그냥 그래요</button>
+        <button class="btn-action">네, 도움 돼요!</button>
+      </div>
+      <button class="btn-close" onclick="UI.popupClose.init('review');"><i>닫기</i></button>
+    </section>
+  </div>
+
+  <script src="../resources/js/jquery-1.12.4.min.js"></script>
+  <script src="../resources/js/design-ui.js"></script>
+  <script src="../resources/js/lottie-player.js"></script>
+  <script src="../resources/in_app_event/js/design.js"></script>
+  <!-- 퍼블 확인용 스크립트 -->
+  <script>
+    const $elImg = document.querySelectorAll('.card-slot img');
+    window.addEventListener('load', () => {
+      $elImg.forEach((elImg) => {
+        if(elImg.naturalWidth > elImg.naturalHeight) {
+            elImg.classList.add('rotate-img');
+        }
+      })
+    })
+    $btnViewToggle = document.querySelector('.btn-view-toggle');
+    $cardList = document.querySelector('.card-analysis-detail-list');
+    if ($cardList.children.length < 4) {
+      $btnViewToggle.style.display = 'none';
+    }
+    $btnViewToggle.addEventListener('click', (e) => {
+      $cardList.classList.toggle('hidden') ?
+        e.currentTarget.textContent = '모든 카드 보기' :
+        e.currentTarget.textContent = '접기';
+    });
+  </script>
+</body>
+
+</html>

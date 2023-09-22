@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="ko-KR">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../resources/in_app_event/css/common.css" media="screen" rel="stylesheet">
+    <script src="../resources/js/jquery-1.12.4.min.js"></script>
+    <script src="../resources/in_app_event/js/design.js"></script>
+    <script src="../resources/wallet/js/lottie-player.js"></script>
+    <title>더쎈카드</title>
+</head>
+
+<body>
+
+  <div id="wrap" class="event-view-wrap">
+    <!-- container -->
+    <div id="container" class="view">
+      <section class="content">
+        <div class="event-info-wrap">
+          <!--
+                  [D] 클래스 정의
+                  type01 : 제휴 이벤트
+                  type02 : 참여 이벤트
+              -->
+          <span class="flag type02">참여 이벤트</span>
+          <p class="tit">매일 매일 하루에 한 번!<br>황금 연휴 더쏀 룰렛!</p>
+          <div class="info">
+            <span class="day">23.09.27 ~ 10.03</span><span class="state">진행중</span>
+          </div>
+        </div>
+        <div class="event-img-wrap">
+          <img src="../resources/in_app_event/images/img_thanksgiving.jpg" alt="황금연휴 이벤트">
+        </div>
+      </section>
+    </div>
+    <!-- //container -->
+    <div data-ui-fixed="bottom">
+      <div class="btn-wrap full">
+        <button type="button" class="btn-action" onclick="UI.popupOpen.init('result');">
+          응모하기
+          <figure class="tooltip type3 type-rolling">
+            <div class="event-rolling">
+              <div class="event-rolling-inner">
+                <div class="event-rolling-box">
+                  <p><strong>🎉김*혜</strong>님 <em>네이버페이 3만원</em> 당첨</p>
+                  <p><strong>🎉박*태</strong>님 <em>츄파춥스 쿠폰</em> 당첨</p>
+                </div>
+              </div>
+            </div>
+          </figure>
+        </button>
+      </div>
+    </div>
+  </div>
+
+    <!-- [팝업] 상세 응모 팝업 -->
+  <div id="pop-result" class="ly-pop ly-btm ly-info ndim dim7">
+      <div class="wrap">
+          <div class="content">
+              <div class="desc-txt type02">
+                  <p class="tit">마케팅 정보 수신 동의</p>
+                  <p class="txt">고객님이 응모하신 이벤트에 대한 알림과<br>다른 유용한 이벤트 정보를 알려드릴게요.</p>
+              </div>
+              <ul class="term-chk-list">
+                  <li>
+                      <span class="chk">
+                          <input type="checkbox" name="terms" id="terms01">
+                          <label for="terms01">마케팅 목적 개인정보 수집·이용 동의(선택)</label>
+                      </span>
+                      <button type="button" class="btn-link" onclick="UI.popupOpen.init('terms');"><span class="blind">약관 상세보기</span></button>
+                  </li>
+                  <li>
+                      <span class="chk">
+                          <input type="checkbox" name="terms" id="terms02">
+                          <label for="terms02">마케팅 정보 수신 동의(선택)</label>
+                      </span>
+                      <button type="button" class="btn-link" onclick="UI.popupOpen.init('terms');"><span class="blind">약관 상세보기</span></button>
+                  </li>
+              </ul>
+              <ul class="dot-list">
+                  <li>동의 철회는 [설정 > 알림 설정] 에서 변경 가능해요</li>
+                  <li>마케팅 정보 수신 동의한 고객에 한해 응모신청 및 경품지급이 가능해요</li>
+              </ul>
+          </div>
+          <div data-ui-fixed="bottom">
+              <div class="btn-wrap">
+                  <button type="button" class="btn-basic" onclick="UI.popupClose.init('result');">괜찮아요</button>
+                  <button type="button" class="btn-action btn-enter" onclick="
+                    UI.popupClose.init('result');
+                    UI.popupOpen.init('result01');
+                  ">네,알려주세요</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- //[팝업] 상세 응모 팝업 -->
+
+  <!-- 룰렛 -->
+  <div id="pop-result01" class="ly-pop ly-btm ly-info ndim dim7">
+    <div class="wrap thanksgiving">
+      <div class="content" style="overflow: hidden;">
+        <img class="img-text" src="../resources/in_app_event/images/img_thanksgiving_text.png" alt="매일주는 무료 연휴 지원금! 황금 연휴 더쎈 룰렛">
+        <div class="before-wrap">
+          <div class="roulette roulette-case6">
+            <i class="pin"></i>
+            <i class="btn"></i>
+            <div class="box">
+              <img src="../resources/in_app_event/images/img_thanksgiving_plate.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-ui-fixed="bottom">
+        <div class="desc-text">
+          무료 참여 기회가 있어요!<br>지금 바로 더쎈 룰렛을 돌려볼까요?
+        </div>
+        <div class="btn-wrap">
+          <button type="button" class="btn-withdrawal" onclick="UI.popupClose.init('result01');">다음에 할래요</button>
+          <button type="button" class="btn-action" onclick="eventRoulette6()">응모하기</button>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <!-- //룰렛 -->
+
+  <!-- 당첨 o -->
+  <div id="pop-result02" class="ly-pop ly-btm ly-info ndim dim7">
+    <div class="wrap roulette-win">
+      <div class="content" style="overflow: hidden">
+        <div class="after-wrap">
+          <div class="tit-wrap" style="margin-top: 0;">
+            <span class="txt" style="margin: 0 0 .6rem 0;">
+              황금 연휴 더쎈 룰렛
+            </span>
+            <p class="tit">당첨을 축하드립니다!</p>
+          </div>
+          <div class="roulette-couponbox">
+            <img id="rouletteImage" src="../resources/in_app_event/images/img_event_prize_01.png" alt="">
+            <div class="push-coupon">츄파춥스 쿠폰</div>
+            <div class="push-coupon">네이버페이 <span class="pay-coupon">10,000</span>원</div>
+            <div class="couponbox-text">
+              [쿠폰함]<br>받은 쿠폰 확인하기
+            </div>
+          </div>
+          <div class="roulette-txt">
+            앞으로도 더쎈카드와 함께하는<br/>현명한 소비 생활을 응원합니다.
+            <p>지금 <span class="colorMain">이벤트 공유</span>와 <span class="colorMain">추가 참여 기회</span>를 받아가세요!</p>
+          </div>
+          <div class="roulette-count">
+            <div>
+              <span class="key">오늘 남은 횟수 :</span>
+              <span class="val">3회</span>
+            </div>
+          </div>
+          <p class="roulette-desc">* 나에게 보낸 공유하기는 참여 기회를 제공하지 않습니다.</p>
+        </div>
+      </div>
+      <div data-ui-fixed="bottom">
+        <div class="btn-wrap">
+          <button type="button" onclick="javascript:void(0);" class="btn-action">
+            연휴 지원금 소문내기
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //당첨 o -->
+
+  <!-- 당첨 x -->
+  <div id="pop-result03" class="ly-pop ly-btm ly-info ndim dim7">
+    <div class="wrap">
+      <div class="content">
+        <div class="after-wrap">
+          <div class="tit-wrap" style="margin-top: 0;">
+            <span class="txt">
+              황금 연휴 더쎈 룰렛
+            </span>
+            <p class="tit">꽝! 하지만 추가 기회가?</p>
+          </div>
+          <p class="roulette-txt-top">지금 이벤트를 친구에게 공유하면<br><span class="colorMain">추가 참여 기회</span>를 더 드려요!</p>
+          <div class="roulette-count">
+            <div>
+              <span class="key">오늘 남은 횟수 :</span>
+              <span class="val">3회</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-ui-fixed="bottom">
+        <div class="btn-wrap">
+          <button type="button" onclick="javascript:void(0);" class="btn-action">
+            연휴 지원금 소문내기
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //당첨 x -->
+
+  <!-- 응모권 미보유 시 노출 팝업 -->
+  <div id="pop-result04" class="ly-pop ly-btm ly-info ndim dim7">
+    <div class="wrap roulette-apply">
+      <div class="content" style="overflow: hidden">
+        <div class="after-wrap">
+          <div class="roulette-coupon">
+            <img class="img-w80" src="../resources/in_app_event/images/img_roulette_thanksgiving_plate.png" alt="">
+          </div>
+          <div class="roulette-txt">
+            무료 참여 기회를 사용했어요!
+            <p>지금 이벤트를 친구에게 <span class="colorMain">공유</span>하면<br>
+              <span class="colorMain">추가 참여 기회</span>를 더 드려요!</p>
+          </div>
+          <div class="roulette-count">
+            <div>
+              <span class="key">오늘 남은 횟수 :</span>
+              <span class="val">0회</span>
+            </div>
+          </div>
+          <p class="roulette-desc">* 나에게 보낸 공유하기는 참여 기회를 제공하지 않습니다.</p>
+        </div>
+      </div>
+      <div data-ui-fixed="bottom">
+        <div class="btn-wrap">
+          <button type="button" onclick="javascript:void(0);" class="btn-action">
+            연휴 지원금 소문내기
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //응모권 미보유 시 노출 팝업 -->
+
+  <!-- 당일 응모 기회 모두 소진 시 노출되는 팝업 -->
+  <div id="pop-result05" class="ly-pop ly-btm ly-info ndim dim7">
+    <div class="wrap">
+      <div class="content">
+        <div class="after-wrap">
+          <div class="tit-wrap" style="margin-top: 0;">
+            <span class="txt">
+              황금 연휴 더쎈 룰렛
+            </span>
+            <p class="tit">오늘 참여 기회를 다 사용했어요!</p>
+          </div>
+          <p class="roulette-txt-top">
+            매일 밤 자정 <span class="colorMain">무료 참여 기회</span>가 생겨요!<br>
+            매일 주는 무료 연휴 지원금!<br>
+            내일도 도전해보세요!
+          </p>
+          <div class="roulette-count">
+            <div>
+              <span class="key">오늘 남은 횟수 :</span>
+              <span class="val">0회</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-ui-fixed="bottom">
+        <div class="btn-wrap">
+          <button type="button" onclick="javascript:void(0);" class="btn-action">
+            이달의 캐시백 이벤트 보러가기
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //당일 응모 기회 모두 소진 시 노출되는 팝업 -->
+
+  <script>
+    // 확인용 샘플
+    var count = 0;
+    function sample() {
+      switch(count) {
+        case 1 : {
+          eventRoulette6('case1');
+          break;
+        }
+        case 2 : {
+          eventRoulette6('case2');
+          break;
+        }
+        case 3 : {
+          eventRoulette6('case3');
+          break;
+        }
+        default : {
+          eventRoulette6('boom');
+          break;
+        }
+      }
+      count++;
+    }
+    // 확인용 샘플
+
+    var rouletteState = false;
+
+    function eventRoulette6(type) {
+      var roulette = document.querySelector('.roulette');
+
+      function selectRandomCase() {
+        // 0부터 5까지의 정수를 랜덤으로 생성
+        return Math.floor(Math.random() * 6);
+      }
+
+      function updateRoulette(caseIndex) {
+        if (!roulette) {
+          console.error('roulette 요소를 찾을 수 없습니다.');
+          return;
+        }
+
+        // 기존 클래스들을 모두 제거
+        roulette.classList.remove('case1', 'case2', 'case3', 'case4', 'case5', 'boom');
+        roulette.classList.add('on');
+
+        // 선택된 케이스에 해당하는 클래스 추가
+        switch (caseIndex) {
+          case 0:
+            roulette.classList.add('case1');
+            break;
+          case 1:
+            roulette.classList.add('case2');
+            break;
+          case 2:
+            roulette.classList.add('case3');
+            break;
+          case 3:
+            roulette.classList.add('case4');
+            break;
+          case 4:
+            roulette.classList.add('case5');
+            break;
+          case 5:
+            roulette.classList.add('boom');
+            break;
+        }
+      }
+
+      function handleResult(caseIndex) {
+        roulette.classList.remove('on');
+        rouletteState = false;
+
+        // 결과에 따라 다른 팝업 열기
+        switch (caseIndex) {
+          case 0:
+          case 1:
+          case 2:
+          case 3:
+          case 4:
+            UI.popupOpen.init('result02');
+            break;
+          case 5:
+            UI.popupOpen.init('result03'); // 'boom' 케이스에 대한 팝업 열기 (꽝 처리)
+            break;
+        }
+      }
+
+      if (rouletteState === false) {
+        rouletteState = true;
+        var randomCaseIndex = selectRandomCase();
+        updateRoulette(randomCaseIndex);
+
+        setTimeout(function () {
+          handleResult(randomCaseIndex);
+        }, 2200);
+      }
+    }
+
+    function rolling() {
+      let wrap = document.querySelector('.event-rolling');
+      let inner = document.querySelector('.event-rolling-inner');
+      let box = document.querySelector('.event-rolling-box');
+      wrap.querySelectorAll('.isClone').forEach(_this=>{
+        _this.remove();
+      })
+      let items = box.querySelectorAll('p');
+      for(let idx = 0; idx < items.length; idx++) {
+        let clone = items[idx].cloneNode(true);
+        clone.classList.add('isClone');
+        box.insertAdjacentElement('beforeend', clone);
+      }
+      let boxClone = box.cloneNode(true);
+      boxClone.classList.add('isClone');
+      inner.insertAdjacentElement('beforeend', boxClone);
+      inner.style.animationDuration = (box.clientWidth / wrap.clientWidth) * 10 + 's';
+      window.addEventListener('resize', ()=>{
+        inner.style.animationDuration = (box.clientWidth / wrap.clientWidth) * 10 + 's';
+      });
+    }
+    rolling();
+  </script>
+</body>
+
+</html>

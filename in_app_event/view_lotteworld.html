@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="ko-KR">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../resources/in_app_event/css/common.css" media="screen" rel="stylesheet">
+    <title>더쎈카드</title>
+</head>
+
+<body>
+
+    <div id="wrap" class="event-view-wrap lpoint">
+        <!-- container -->
+        <div id="container" class="view">
+            <section class="content">
+                <div class="event-info-wrap">
+                    <span class="flag type02">참여 이벤트</span>
+                    <p class="tit">발급만 해도 네이버페이 100%증정</p>
+                    <div class="info">
+                        <span class="day">22.08.01 ~ 08.15</span><span class="state">당첨자 발표</span>
+                    </div>
+                </div>
+                <div class="event-img-wrap">
+                    <img src="../resources/in_app_event/images/img_lotteworld1.jpg" alt="롯데월드 이벤트">
+                    <div class="card-rcmd-link-box">
+                      <a class="card-rcmd-link1" href="https://event.thessencard.co.kr/cardrecommend/event/26">신한카드쓰고 <strong>최대 <span>21</span>만원</strong> 받기</a>
+                      <a class="card-rcmd-link2" href="https://event.thessencard.co.kr/cardrecommend/event/25">국민카드쓰고 <strong>최대 <span>19</span>만원</strong> 받기</a>
+                      <a class="card-rcmd-link3" href="https://event.thessencard.co.kr/cardrecommend/event/21">롯데카드쓰고 <strong>최대 <span>17</span>만원</strong> 받기</a>
+                      <a class="card-rcmd-link4" href="https://event.thessencard.co.kr/cardrecommend/event/22">NH카드쓰고 <strong>최대 <span>17</span>만원</strong> 받기</a>
+                      <a class="card-rcmd-link5" href="https://event.thessencard.co.kr/cardrecommend/event/11">우리카드쓰고 <strong>최대 <span>14</span>만원</strong> 받기</a>
+                      <a class="card-rcmd-link6" href="https://event.thessencard.co.kr/cardrecommend/event/24">IBK카드쓰고 <strong>최대 <span>12</span>만원</strong> 받기</a>
+                    </div>
+                    <img src="../resources/in_app_event/images/img_lotteworld2.jpg" alt="롯데월드 이벤트">
+                </div>
+            </section>
+        </div>
+        <!-- //container -->
+        <div data-ui-fixed="bottom">
+            <div class="btn-wrap full">
+                <button type="button" class="btn-action" onclick="UI.popupOpen.init('result');">응모하기</button>
+            </div>
+        </div>
+    </div>
+    <!-- [팝업] 상세 응모 팝업 -->
+    <div id="pop-result" class="ly-pop ly-btm ly-info ndim">
+        <div class="wrap">
+            <div class="content">
+                <div class="desc-txt type02">
+                    <p class="tit">마케팅 정보 수신 동의</p>
+                    <p class="txt">고객님이 응모하신 이벤트에 대한 알림과<br>다른 유용한 이벤트 정보를 알려드릴게요.</p>
+                </div>
+                <ul class="term-chk-list">
+                    <li>
+                        <span class="chk">
+                            <input type="checkbox" name="terms" id="terms01">
+                            <label for="terms01">마케팅 목적 개인정보 수집·이용 동의(선택)</label>
+                        </span>
+                        <button type="button" class="btn-link" onclick="UI.popupOpen.init('terms');"><span class="blind">약관 상세보기</span></button>
+                    </li>
+                    <li>
+                        <span class="chk">
+                            <input type="checkbox" name="terms" id="terms02">
+                            <label for="terms02">마케팅 정보 수신 동의(선택)</label>
+                        </span>
+                        <button type="button" class="btn-link" onclick="UI.popupOpen.init('terms');"><span class="blind">약관 상세보기</span></button>
+                    </li>
+                </ul>
+                <ul class="dot-list">
+                    <li>동의 철회는 [설정 > 알림 설정] 에서 변경 가능해요</li>
+                    <li>마케팅 정보 수신 동의한 고객에 한해 응모신청 및 경품지급이 가능해요</li>
+                </ul>
+            </div>
+            <div data-ui-fixed="bottom">
+                <div class="btn-wrap">
+                    <button type="button" class="btn-basic" onclick="UI.popupClose.init('result');">괜찮아요</button>
+                    <button type="button" class="btn-action btn-enter">네,알려주세요</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //[팝업] 상세 응모 팝업 -->
+    <!-- [팝업] 상세 응모 팝업 -->
+    <div id="pop-result01" class="ly-pop ly-btm ly-info ndim">
+        <div class="wrap">
+            <div class="content">
+                <div class="tit-wrap">
+                    <p class="tit">더쎈딜 응모하기</p>
+                    <span class="txt">[롯데월드 자유이용권]</span>
+                </div>
+                <!-- 코드입력 전 -->
+                <div class="before-wrap">
+                    <div class="code-container">
+                        <div class="code-wrap type02">
+                            <div class="code center"><input type="text" value="500" readonly></div>
+                        </div>
+                        <span class="period">응모가능한 포인트 : 15,000 P</span>
+                    </div>
+                    <div class="noti-wrap">
+                        <ul class="txt dot-list">
+                            <li class="point">응모한 포인트는 환불이 불가능 합니다.</li>
+                            <li>기간내 1회 응모 가능합니다.</li>
+                            <li>회당 최소 500P 까지 응모할 수 있습니다.</li>
+                            <li>응모는 당첨 발표일 전월 15일 ~ 당월 13일 까지 가능합니다.</li>
+                            <li>매월 14일 당첨자 발표 안내가 공지됩니다.</li>
+                            <li>당사 및 제휴사의 사정에 따라 별도 고지 없이 변경 및 종료될 수 있습니다.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //코드입력 전 -->
+            </div>
+            <div data-ui-fixed="bottom">
+                <div class="btn-wrap full more">
+                    <button type="button" class="btn-action" onclick="UI.popupClose.init('result01');UI.popupOpen.init('result02');">응모하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //[팝업] 상세 응모 팝업 -->
+    <!-- [팝업] 상세 응모 완료 -->
+    <div id="pop-result02" class="ly-pop ly-btm ly-info ndim">
+        <div class="wrap">
+            <div class="content">
+                <div class="desc-txt">
+                    <p class="tit">더쎈딜 응모 완료</p>
+                    <p class="txt">응모가 완료되었어요 !</p>
+                    <p class="txt-s point">당첨자 발표일 : 2023년 4월 14일 14시</p>
+                </div>
+            </div>
+            <div data-ui-fixed="bottom">
+                <div class="btn-wrap full">
+                    <button type="button" class="btn-action" onclick="UI.popupClose.init('result02');">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //[팝업] 상세 응모 완료 -->
+    <!-- [팝업] 상세 응모 초과 -->
+    <div id="pop-result03" class="ly-pop ly-btm ly-info ndim">
+        <div class="wrap">
+            <div class="content">
+                <div class="desc-txt">
+                    <p class="tit">더쎈딜 응모 완료</p>
+                    <p class="txt">오늘은 이미 응모를 완료했어요.</p>
+                    <p class="txt-s point02">더쎈딜은 1일 1회 응모가 가능해요.</p>
+                </div>
+            </div>
+            <div data-ui-fixed="bottom">
+                <div class="btn-wrap full">
+                    <button type="button" class="btn-action" onclick="UI.popupClose.init('result03');">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //[팝업] 상세 응모 초과 -->
+    <!-- [팝업] 카드수익금 미개설 회원 -->
+    <div id="pop-result04" class="ly-pop ly-btm ly-info ndim">
+        <div class="wrap">
+            <div class="content">
+                <div class="desc-txt">
+                    <p class="tit">더쎈딜 응모 안내</p>
+                    <p class="txt">카드수익금 지갑을 개설한 회원만<br>더쎈딜 응모가 가능해요.</p>
+
+                    <ul class="dot-list">
+                        <li>지갑 개설 시 개설 축하금 300P 드려요.</li>
+                        <li>혜택 좋은 카드로 사용했는지 확인하시면 추가 50P를 드려요.</li>
+                    </ul>
+                </div>
+            </div>
+            <div data-ui-fixed="bottom">
+                <div class="btn-wrap ">
+                    <button type="button" class="btn-basic" onclick="UI.popupClose.init('result03');">확인</button>
+                    <button type="button" class="btn-action" onclick="UI.popupClose.init('result03');">지갑 개설하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //[팝업] 카드수익금 미개설 회원 -->
+    <!-- [팝업] 상세 미당첨 -->
+    <div id="pop-result05" class="ly-pop ly-btm ly-info ndim">
+        <div class="wrap">
+            <div class="content">
+                <div class="tit-wrap">
+                    <p class="tit">아쉽지만 다음 기회에!</p>
+                </div>
+                <div class="noti-wrap">
+                    <p class="tit">유의사항</p>
+                    <ul class="txt dot-list">
+                        <li>참여자 선정 기준 : 3월 더쎈딜 에버랜드 자유이용권 참여 대상자 중 총 3명 랜덤 추첨</li>
+                        <li>쿠폰 사용 관련 유의사항은 “쿠폰함” 하단의 유의사항 참고 부탁드립니다.</li>
+                    </ul>
+                    <p class="cs-txt">이벤트 관련 문의는 고객센터 <span class="cs">cs@thessencard.co.kr</span> 로 연락 바랍니다.</p>
+                </div>
+
+            </div>
+            <div data-ui-fixed="bottom">
+                <div class="btn-wrap full more">
+                    <button type="button" class="btn-action" onclick="UI.popupClose.init('result05');">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //[팝업] 상세 미당첨 -->
+    <!-- [팝업] 상세 당첨 -->
+    <div id="pop-result06" class="ly-pop ly-btm ly-info ndim">
+        <div class="wrap">
+            <div class="content">
+                <div class="tit-wrap">
+                    <p class="tit">당첨을 축하 드립니다!</p>
+                    <span class="txt">[롯데월드 영화관람권]</span>
+                </div>
+                <!-- [2022.08.30] 영역 변경 -->
+                <div class="code-container">
+                    <div class="code-wrap">
+                        <span class="code center">에버랜드 자유이용권 응모</span>
+                        <button type="button" class="btn-copy">쿠폰함</button>
+                    </div>
+                    <span class="period">유효기간 : 2022.10.26</span>
+                </div>
+                <!-- //[2022.08.30] 영역 변경 -->
+                <div class="noti-wrap">
+                    <p class="tit">유의사항</p>
+                    <ul class="txt dot-list">
+                        <li>참여자 선정 기준 : 3월 더쎈딜 에버랜드 자유이용권 참여 대상자 중 총 3명 랜덤 추첨</li>
+                        <li>쿠폰 사용 관련 유의사항은 “쿠폰함” 하단의 유의사항 참고 부탁드립니다.</li>
+                    </ul>
+                    <p class="cs-txt">이벤트 관련 문의는 고객센터 <span class="cs">cs@thessencard.co.kr</span> 로 연락 바랍니다.</p>
+                </div>
+            </div>
+            <div data-ui-fixed="bottom">
+                <div class="btn-wrap full more">
+                    <button type="button" class="btn-action" onclick="UI.popupClose.init('result06');">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //[팝업] 상세 당첨 -->
+    <!-- [팝업] 상세 당첨자 집계중 -->
+    <div id="pop-result07" class="ly-pop ly-btm ly-info ndim">
+        <div class="wrap">
+            <div class="content">
+                <div class="desc-txt">
+                    <p class="tit">참여자 집계중이에요.</p>
+                    <p class="txt">오늘 14시에 공개 예정이니<br>조금만 기다려주세요!</p>
+                </div>
+            </div>
+            <div data-ui-fixed="bottom">
+                <div class="btn-wrap full more">
+                    <button type="button" class="btn-action" onclick="UI.popupClose.init('result07');">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //[팝업] 상세 당첨자 집계중 -->
+    <!-- [팝업] 상세 종료 -->
+    <div id="pop-result08" class="ly-pop ly-btm ly-info ndim">
+        <div class="wrap">
+            <div class="content">
+                <div class="desc-txt">
+                    <p class="tit">더쎈딜이 종료되었습니다.</p>
+                    <p class="txt">다음달에 더 좋은 내용으로 다시 만나요!</p>
+                </div>
+            </div>
+            <div data-ui-fixed="bottom">
+                <div class="btn-wrap full more">
+                    <button type="button" class="btn-action" onclick="UI.popupClose.init('result08');">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //[팝업] 상세 종료 -->
+    <!-- [팝업] 마케팅 정보 수신 안내 toast -->
+    <div id="pop-toast01" class="ly-pop ly-toast02 ndim">
+        <div class="wrap">
+            <div class="content">
+                <p>두 가지 항목 모두 동의해주세요.</p>
+            </div>
+        </div>
+    </div>
+    <!-- [팝업] 마케팅 정보 수신 안내 toast -->
+    <!-- [팝업] 마케팅 동의 완료 toast -->
+    <div id="pop-toast02" class="ly-pop ly-toast02 ndim">
+        <div class="wrap">
+            <div class="content">
+                <p><span>yyyy-mm-dd</span><br>마케팅 정보 수신 동의 완료</p>
+            </div>
+        </div>
+    </div>
+    <!-- [팝업] 마케팅 동의 완료 toast -->
+
+    <script src="../resources/js/jquery-1.12.4.min.js"></script>
+    <script src="../resources/in_app_event/js/design.js"></script>
+    <script>
+        $(".btn-enter").on("click", function () {
+            const chkList = document.querySelectorAll('.chk input').length;
+            const chkItem = document.querySelectorAll('.chk input:checked').length;
+            if (chkItem >= chkList) {
+                UI.popupOpen.init('toast02', function () { UI.popupClose.init('toast02'); })
+                setTimeout(function () {
+                    UI.popupClose.init('result');
+                    UI.popupOpen.init('result01');
+                }, 1000);
+            } else {
+                UI.popupOpen.init('toast01', function () { UI.popupClose.init('toast01'); })
+            }
+        });
+    </script>
+</body>
+
+</html>

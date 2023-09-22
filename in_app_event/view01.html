@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Language" content="ko-KR">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <link href="../resources/in_app_event/css/common.css" media="screen" rel="stylesheet">
+  <title>더쎈카드</title>
+</head>
+
+<body>
+
+  <div id="wrap" class="event-view-wrap">
+    <!-- header -->
+    <!-- <header id="header" data-ui-fixed="top">
+        <h1 class="page-tit">이벤트</h1>
+        <button type="button" class="btn-back"><i>이전 화면으로 이동</i></button>
+    </header> -->
+    <!-- //header -->
+    <!-- container -->
+    <div id="container" class="view">
+      <section class="content">
+        <div class="event-info-wrap">
+          <p class="tit">발급만 해도 네이버페이 100%증정</p>
+          <div class="info">
+            <span class="day">22.08.01 ~ 08.15</span><span class="state">진행중</span>
+          </div>
+        </div>
+        <p class="view-info-txt">* 메가박스와 제휴된 이벤트로 메가박스 앱내 참여 가능하단 문구~</p>
+        <div>
+          <img src="../resources/in_app_event/images/img_zum.png" alt="">
+        </div>
+      </section>
+    </div>
+    <!-- //container -->
+    <div data-ui-fixed="bottom">
+      <!-- [2022.12.07] 공유하기 버튼 추가 -->
+      <button type="button" class="btn-share">공유하기</button>
+      <div class="btn-wrap bg-none">
+        <button type="button" class="btn-round" onclick="UI.popupOpen.init('result02');">영화관람권 당첨 확인</button>
+      </div>
+      <div class="btn-wrap full">
+        <button type="button" class="btn-action" onclick="UI.popupOpen.init('result01');">코드입력</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../resources/js/jquery-1.12.4.min.js"></script>
+  <script src="../resources/in_app_event/js/design.js"></script>
+</body>
+
+</html>

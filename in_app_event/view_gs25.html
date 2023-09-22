@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Language" content="ko-KR">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <link href="../resources/in_app_event/css/common.css" media="screen" rel="stylesheet">
+  <title>더쎈카드</title>
+</head>
+
+<body>
+
+  <div id="wrap" class="event-view-wrap">
+    <!-- container -->
+    <div id="container" class="view">
+      <section class="content">
+        <div class="event-info-wrap">
+          <!--
+                  [D] 클래스 정의
+                  type01 : 제휴 이벤트
+                  type02 : 참여 이벤트
+              -->
+          <span class="flag type02">참여 이벤트</span>
+          <p class="tit">발급만 해도 네이버페이 100%증정</p>
+          <div class="info">
+            <span class="day">22.08.01 ~ 08.15</span><span class="state">당첨자 발표</span>
+          </div>
+        </div>
+        <div class="event-img-wrap">
+          <img src="../resources/in_app_event/images/img_lottecinema.png" alt="메가박스 이벤트">
+        </div>
+      </section>
+    </div>
+    <!-- //container -->
+    <div data-ui-fixed="bottom">
+      <div class="btn-wrap full">
+        <button type="button" class="btn-action" onclick="UI.popupOpen.init('result01');">코드 입력</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- [팝업] 코드 입력 -->
+  <div id="pop-result01" class="ly-pop ly-btm ly-info ndim">
+    <div class="wrap">
+      <div class="content">
+        <!-- 코드입력 전 -->
+        <div class="before-wrap">
+          <div class="roulette">
+            <i class="pin"></i>
+            <i class="btn"></i>
+            <div class="box">
+              <img src="../resources/in_app_event/images/img_roulette_plate.png" alt="">
+            </div>
+          </div>
+          <div class="code-container">
+            <div class="code-wrap type02">
+              <div class="code"><input type="text" placeholder="비밀코드를 입력해주세요."></div>
+            </div>
+          </div>
+          <p class="cs-txt">롯데시네마APP에서 더쎈카드 이벤트 비밀코드를
+            확인하고 입력해주세요.<br><br>고객센터 <span class="cs">cs@thessencard.co.kr</span> 로 연락 바랍니다.</p>
+        </div>
+        <!-- //코드입력 전 -->
+        <!-- 코드입력 후 -->
+        <div class="after-wrap" style="display:none">
+          <div class="tit-wrap">
+            <p class="tit">당첨을 축하 드립니다!</p>
+            <span class="txt">[GS25 모바일 상품권]</span>
+          </div>
+          <div class="code-container">
+            <div class="img-wrap">
+              <img src="../resources/in_app_event/images/img_gs25.png" alt="" style="max-width:150px">
+              <p class="txt">앱 우측상단 [더보기] → [쿠폰함]</p>
+            </div>
+          </div>
+          <p class="cs-txt">앞으로도 더쎈카드에서 진행될 다양한 이벤트에도 많은 참여와
+            관심 부탁드립니다. 감사합니다.<br><br>고객센터 <span class="cs">cs@thessencard.co.kr</span> 로 연락 바랍니다.
+          </p>
+        </div>
+
+        <!-- //코드입력 후 -->
+      </div>
+      <div data-ui-fixed="bottom">
+        <div class="btn-wrap full">
+          <button type="button" class="btn-action btn-roulette"
+            onclick="UI.popupOpen.init('error', function () { UI.popupClose.init('error'); });">룰렛 돌리기</button>
+          <button type="button" class="btn-action btn-pop-close" style="display:none"
+            onclick="UI.popupClose.init('result01');">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //[팝업] 코드 입력 -->
+
+  <!-- //[팝업] 토스트 -->
+  <div id="pop-error" class="ly-pop ly-toast02 ndim">
+    <div class="wrap">
+      <div class="content error">
+        <p>아쉽지만 신규회원을 위한 혜택이에요</p>
+      </div>
+    </div>
+  </div>
+  <!-- //[팝업] 토스트 -->
+
+  <script src="../resources/js/jquery-1.12.4.min.js"></script>
+  <script src="../resources/in_app_event/js/design.js"></script>
+  <script>
+    $(function () {
+
+      // 룰렛 돌리기
+      $('.btn-roulette').on("click", function () {
+        $('.roulette').addClass('on');
+
+        setTimeout(function () {
+          $('.before-wrap').hide();
+          $('.after-wrap').show();
+          $('.btn-roulette').hide();
+          $('.btn-pop-close').show();
+          $('.roulette').removeClass('on');
+        }, 2200);
+
+      });
+
+      // 코드 입력 팝업 닫기
+      $('.btn-pop-close').on("click", function () {
+        $('.before-wrap').show();
+        $('.after-wrap').hide();
+        $('.btn-roulette').show();
+        $('.btn-pop-close').hide();
+      });
+
+
+
+    });
+  </script>
+</body>
+
+</html>
